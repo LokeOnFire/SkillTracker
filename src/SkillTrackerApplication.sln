@@ -3,9 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkillSearch", "SkillSearch", "{A0C5D341-FF92-4572-8412-0E2CF83521EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillSearchAPI", "SkillSearch\SkillSearchAPI\SkillSearchAPI.csproj", "{92DCA14B-CB67-43E6-8D2E-73727C1745A3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92DCA14B-CB67-43E6-8D2E-73727C1745A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92DCA14B-CB67-43E6-8D2E-73727C1745A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92DCA14B-CB67-43E6-8D2E-73727C1745A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92DCA14B-CB67-43E6-8D2E-73727C1745A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A0C5D341-FF92-4572-8412-0E2CF83521EF} = {0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}
+		{92DCA14B-CB67-43E6-8D2E-73727C1745A3} = {A0C5D341-FF92-4572-8412-0E2CF83521EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89C2DB91-9F9E-4AF1-B787-08CFC5ACAAC4}
