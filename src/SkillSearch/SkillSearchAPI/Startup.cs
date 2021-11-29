@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SkillSearchAPI.Data;
+using SkillSearchAPI.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,9 @@ namespace SkillSearchAPI
         {
 
             services.AddControllers();
+            services.AddScoped<ISkillSearchContext, SkillSearchContext>();
+            services.AddScoped<ISkillSearchRepository, SkillSearchRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkillSearchAPI", Version = "v1" });

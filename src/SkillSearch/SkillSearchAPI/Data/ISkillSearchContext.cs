@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SkillSearchAPI.Data
 {
-    interface ISkillSearchContext
+    public interface ISkillSearchContext
     {
         IMongoCollection<AssociateSkill> AssociateSkills { get; }
         IMongoCollection<Skill> Skills { get; }

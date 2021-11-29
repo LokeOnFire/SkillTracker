@@ -15,16 +15,16 @@ namespace SkillSearchAPI.Entities
         [BsonElement("Name")]
         public string Name { get; set; }
 
-        [BsonElement("AssociateID")]
+
         public string AssociateID { get; set; }
 
-        [BsonElement("SkillID")]
+ 
         public string SkillID { get; set; }
 
-        [BsonElement("MobileNumber")]
+  
         public string MobileNumber { get; set; }
 
-        [BsonElement("email")]
+ 
         public string email { get; set; }
     }
 }
