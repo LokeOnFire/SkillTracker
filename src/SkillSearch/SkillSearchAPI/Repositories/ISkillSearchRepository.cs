@@ -12,5 +12,7 @@ namespace SkillSearchAPI.Repositories
         Task<IEnumerable<AssociateSkill>> SearchAssociateById(string associteid);
         Task<IEnumerable<AssociateSkill>> SearchAssociateBySkill(string skill);
 
+        Task<IEnumerable<AssociateSkill>> GetAllDetails ();
+
     }
 }

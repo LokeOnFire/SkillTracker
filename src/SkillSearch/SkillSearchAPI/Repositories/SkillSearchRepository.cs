@@ -51,6 +51,16 @@ namespace SkillSearchAPI.Repositories
                     .ToListAsync();
         }
 
+        public async Task<IEnumerable<AssociateSkill>> GetAllDetails()
+        {
+            return await _context
+                    .AssociateSkills
+                    .Find(p => true)
+                    .ToListAsync();
+                    
+                    
+        }
+
         //public Task<bool> upate(AssociateSkill associateskill)
         // {
         //     var updateResult = await _context.AssociateSkills.ReplaceOneAsync(filter: g => g.AssociateID, replacement: associateskill);

@@ -38,7 +38,7 @@ namespace SkillSearchAPI.Controllers
         [ProducesResponseType(typeof(IEnumerable<AssociateSkill>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateById(string Id)
         {
-            var result = await _repository.SearchAssociateByName(Id);
+            var result = await _repository.SearchAssociateById(Id);
             return Ok(result);
         }
 
@@ -47,10 +47,18 @@ namespace SkillSearchAPI.Controllers
         [ProducesResponseType(typeof(IEnumerable<AssociateSkill>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateBySkill(string skill)
         {
-            var result = await _repository.SearchAssociateByName(skill);
+            var result = await _repository.SearchAssociateBySkill(skill);
             return Ok(result);
         }
 
+        [HttpGet]
+        [Route("all")]
+        [ProducesResponseType(typeof(IEnumerable<AssociateSkill>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAllData()
+        {
+            var result = await _repository.GetAllDetails();
+            return Ok(result);
+        }
 
 
     }
