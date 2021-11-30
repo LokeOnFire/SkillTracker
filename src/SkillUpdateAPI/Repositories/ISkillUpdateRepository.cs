@@ -1,0 +1,13 @@
+﻿using SkillUpdateAPI.Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SkillUpdateAPI.Repositories
+{
+    public interface ISkillUpdateRepository
+    {
+        public Task<bool> SkillUpdate(AssociateSkill associateskill);
+    }
+}

@@ -24,12 +24,12 @@ namespace SkillSearchAPI.Controllers
         }
 
         [HttpGet]
-        [Route("name/{nm}")]
+        [Route("name/{name}")]
         [ProducesResponseType(typeof(IEnumerable<AssociateSkill>),(int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateByName(string nm)
+        public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateByName(string name)
         {
-            var result = await _repository.SearchAssociateByName(nm);
+            var result = await _repository.SearchAssociateByName(name);
             return Ok(result);
         }
 

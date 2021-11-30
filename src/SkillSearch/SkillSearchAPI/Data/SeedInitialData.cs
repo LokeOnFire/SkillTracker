@@ -137,7 +137,37 @@ namespace SkillSearchAPI.Data
                    MobileNumber="9606035542",
                    email="Amru@gmail.com"
 
-               }
+               },
+               new AssociateSkill()
+               {
+                     Id= ObjectId.GenerateNewId().ToString(),
+                   Name="Loke1",
+                   AssociateID="209654",
+                   SkillID="1",
+                   MobileNumber="9606035541",
+                   email="Lok1@gmail.com"
+
+               },
+               new AssociateSkill()
+               {
+                     Id= ObjectId.GenerateNewId().ToString(),
+                   Name="Loke3",
+                   AssociateID="209651",
+                   SkillID="1",
+                   MobileNumber="9606035549",
+                   email="Lok3@gmail.com"
+
+               },
+               new AssociateSkill()
+               {
+                     Id= ObjectId.GenerateNewId().ToString(),
+                   Name="Loke2",
+                   AssociateID="209653",
+                   SkillID="1",
+                   MobileNumber="9606035540",
+                   email="Lok2@gmail.com"
+
+               },
            };
         }
     }

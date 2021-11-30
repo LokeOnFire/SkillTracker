@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using SkillSearchAPI.Data;
 using SkillSearchAPI.Entities;
 using System;
@@ -18,6 +19,8 @@ namespace SkillSearchAPI.Repositories
 
         public async Task<IEnumerable<AssociateSkill>> SearchAssociateByName(string name)
         {
+            int len = name.Length;
+
             FilterDefinition<AssociateSkill> filter = Builders<AssociateSkill>.Filter.Eq(p => p.Name, name);
 
             var result = _context
@@ -30,7 +33,7 @@ namespace SkillSearchAPI.Repositories
 
         public async Task<IEnumerable<AssociateSkill>> SearchAssociateById(string associteid)
         {
-            FilterDefinition<AssociateSkill> filter = Builders<AssociateSkill>.Filter.ElemMatch(p => p.AssociateID, associteid);
+            FilterDefinition<AssociateSkill> filter = Builders<AssociateSkill>.Filter.Eq(p => p.AssociateID, associteid);
 
             return await _context
                     .AssociateSkills
@@ -40,7 +43,7 @@ namespace SkillSearchAPI.Repositories
 
         public async Task<IEnumerable<AssociateSkill>> SearchAssociateBySkill(string skill)
         {
-            FilterDefinition<AssociateSkill> filter = Builders<AssociateSkill>.Filter.ElemMatch(p => p.SkillID, skill);
+            FilterDefinition<AssociateSkill> filter = Builders<AssociateSkill>.Filter.Eq(p => p.SkillID, skill);
 
             return await _context
                     .AssociateSkills
