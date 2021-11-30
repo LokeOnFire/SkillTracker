@@ -18,7 +18,7 @@ namespace SkillUpdateAPI.Controllers
         private readonly ISkillUpdateRepository _repository;
         private readonly ILogger<SkillUpdateController> _logger;
 
-        public SkillUpdateController(ISkillUpdateRepository repository, ILogger<SkillUpdateController> logger)
+        public SkillUpdateController(ISkillUpdateRepository repository, ILogger<SkillUpdateController> logger) 
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
