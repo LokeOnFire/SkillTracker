@@ -29,6 +29,20 @@ namespace SkillSearchAPI.Data
 
         private static IEnumerable<Skill> GetPreconfiguredSkills()
         {
+
+//            61a5bf9068086f626b2c1f46 // sample_bsonid
+//61a5bf9f68086f626b2c1f47
+//61a5bfa968086f626b2c1f48
+//61a5bfb268086f626b2c1f49
+//61a5bfba68086f626b2c1f4a
+//61a5bfc368086f626b2c1f4b
+//61a5bfcb68086f626b2c1f4c
+//61a5bfd368086f626b2c1f4d
+//61a5bfdb68086f626b2c1f4e
+//61a5bfe368086f626b2c1f4f
+//61a5bfec68086f626b2c1f50
+//61a5bff468086f626b2c1f51
+
             return new List<Skill>()
             {
                 new Skill()

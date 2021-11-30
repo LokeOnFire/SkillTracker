@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SkillUpdateAPI.Data;
+using SkillUpdateAPI.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,11 @@ namespace SkillUpdateAPI
         {
 
             services.AddControllers();
+
+            services.AddScoped<ISkillUpdateRepository, SkillUpdateRepository>();
+            services.AddScoped<ISkillUpdateContext, SkillUpdateContext>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkillUpdateAPI", Version = "v1" });

@@ -26,7 +26,7 @@ namespace SkillAddAPI.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(AssociateSkill),(int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateBySkill([FromBody] AssociateSkill associateskill)
+        public async Task<ActionResult<IEnumerable<AssociateSkill>>> AddSkill([FromBody] AssociateSkill associateskill)
         {
             await _repository.AddSkill(associateskill);
             return Ok();

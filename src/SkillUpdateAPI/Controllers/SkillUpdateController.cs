@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace SkillUpdateAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]/api/vi/engineer/update-profile")]
     public class SkillUpdateController : ControllerBase
     {
 
@@ -25,7 +27,7 @@ namespace SkillUpdateAPI.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(AssociateSkill), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateBySkill([FromBody] AssociateSkill associateskill)
+        public async Task<ActionResult<IEnumerable<AssociateSkill>>> UpdateSkill([FromBody] AssociateSkill associateskill)
         {
             await _repository.SkillUpdate(associateskill);
             return Ok();
