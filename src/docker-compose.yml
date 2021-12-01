@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  skillsdb:
+    image: mongo
+
+  skillsearchapi:
+    image: ${DOCKER_REGISTRY-}skillsearchapi
+    build:
+      context: .
+      dockerfile: SkillSearch/SkillSearchAPI/Dockerfile
+
+volumes:
+  mongo_data:
