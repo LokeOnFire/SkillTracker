@@ -18,3 +18,25 @@ services:
       - skillsdb
     ports:
       - "8000:80"
+
+  skilladdapi:
+    container_name: skilladdapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://skillsdb:27017"
+    depends_on:
+      - skillsdb
+    ports:
+      - "8001:80"
+
+
+  skillupdateapi:
+    container_name: skillupdateapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://skillsdb:27017"
+    depends_on:
+      - skillsdb
+    ports:
+      - "8002:80"
+

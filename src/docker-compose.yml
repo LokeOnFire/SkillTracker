@@ -10,5 +10,18 @@ services:
       context: .
       dockerfile: SkillSearch/SkillSearchAPI/Dockerfile
 
+  skilladdapi:
+    image: ${DOCKER_REGISTRY-}skilladdapi
+    build:
+      context: .
+      dockerfile: SkillAddAPI/Dockerfile
+
+  skillupdateapi:
+    image: ${DOCKER_REGISTRY-}skillupdateapi
+    build:
+      context: .
+      dockerfile: SkillUpdateAPI/Dockerfile
+
 volumes:
   mongo_data:
+
