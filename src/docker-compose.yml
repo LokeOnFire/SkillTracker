@@ -3,25 +3,84 @@ version: '3.4'
 services:
   skillsdb:
     image: mongo
+    #networks:
+    #  - skilltrakernet
 
   skillsearchapi:
     image: ${DOCKER_REGISTRY-}skillsearchapi
     build:
       context: .
-      dockerfile: SkillSearch/SkillSearchAPI/Dockerfile
+      dockerfile: SkillSearch/SkillSearchAPI/Dockerfile 
+    #networks:
+    #  - skilltrakernet
 
   skilladdapi:
     image: ${DOCKER_REGISTRY-}skilladdapi
     build:
       context: .
       dockerfile: SkillAddAPI/Dockerfile
+    #networks:
+    #  - skilltrakernet
 
   skillupdateapi:
     image: ${DOCKER_REGISTRY-}skillupdateapi
     build:
       context: .
       dockerfile: SkillUpdateAPI/Dockerfile
+    #networks:
+    #  - skilltrakernet
+
+
+  #reverseproxy:
+  #  build:
+  #    context: .
+  #    dockerfile: reverseproxy/Dockerfile
+  #  ports:
+  #    - "9000:9000"
+  #    - "9001:9001"
+  #    - "9002:9002"
+
+      #- "8008:8001"
+      #- "8009:8002"
+
+    restart: always
+    #links :
+    #  - skillsearchapi
+    #  - skilladdapi
+    #  - skillupdateapi
+
+  #elasticsearch:
+  #  container_name: elasticsearch
+  #  image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+  #  ports:
+  #    - 9200:9200
+  #  volumes:
+  #    - elasticsearch-data:/usr/share/elasticsearch/data
+  #  environment:
+  #    - xpack.monitoring.enabled=true
+  #    - xpack.watcher.enabled=false
+  #    - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+  #    - discovery.type=single-node
+  #  networks:
+  #    - skilltrakernet
+
+  #kibana:
+  #  container_name: kibana
+  #  image: docker.elastic.co/kibana/kibana:7.9.2
+  #  ports:
+  #    - 5601:5601
+  #  depends_on:
+  #    - elasticsearch
+  #  environment:
+  #    - ELASTICSEARCH_URL=http://elasticsearch:9200
+  #  networks:
+  #    - skilltrakernet
+
+#networks:
+#  skilltrakernet:
+#    driver: bridge
 
 volumes:
   mongo_data:
+  #elasticsearch-data:
 

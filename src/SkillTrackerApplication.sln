@@ -7,13 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkillSearch", "SkillSearch", "{A0C5D341-FF92-4572-8412-0E2CF83521EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillSearchAPI", "SkillSearch\SkillSearchAPI\SkillSearchAPI.csproj", "{92DCA14B-CB67-43E6-8D2E-73727C1745A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillSearchAPI", "SkillSearch\SkillSearchAPI\SkillSearchAPI.csproj", "{92DCA14B-CB67-43E6-8D2E-73727C1745A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillAddAPI", "SkillAddAPI\SkillAddAPI.csproj", "{BF03053C-0802-4D71-8FCB-5E7ADFD2F4FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillAddAPI", "SkillAddAPI\SkillAddAPI.csproj", "{BF03053C-0802-4D71-8FCB-5E7ADFD2F4FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillUpdateAPI", "SkillUpdateAPI\SkillUpdateAPI.csproj", "{5AF0AA2E-14C2-4807-851B-2BCAF89C0E18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillUpdateAPI", "SkillUpdateAPI\SkillUpdateAPI.csproj", "{5AF0AA2E-14C2-4807-851B-2BCAF89C0E18}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5DE2FCC8-CE94-45F1-A94B-59B28ECCDA17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reverseproxy", "reverseproxy", "{1209758D-38D2-454D-A235-5D86440BB32F}"
+	ProjectSection(SolutionItems) = preProject
+		reverseproxy\Dockerfile = reverseproxy\Dockerfile
+		reverseproxy\nginx.conf = reverseproxy\nginx.conf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +52,7 @@ Global
 		{92DCA14B-CB67-43E6-8D2E-73727C1745A3} = {A0C5D341-FF92-4572-8412-0E2CF83521EF}
 		{BF03053C-0802-4D71-8FCB-5E7ADFD2F4FE} = {A0C5D341-FF92-4572-8412-0E2CF83521EF}
 		{5AF0AA2E-14C2-4807-851B-2BCAF89C0E18} = {A0C5D341-FF92-4572-8412-0E2CF83521EF}
+		{1209758D-38D2-454D-A235-5D86440BB32F} = {0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89C2DB91-9F9E-4AF1-B787-08CFC5ACAAC4}
