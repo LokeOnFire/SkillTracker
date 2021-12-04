@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using SkillUpdateAPI.Data;
 using SkillUpdateAPI.Entity;
 using System;
@@ -18,11 +19,27 @@ namespace SkillUpdateAPI.Repositories
 
         public async Task<bool> SkillUpdate(AssociateSkill associateskill)
         {
-            var updateResult = await _context
-                .AssociateSkills
-                .ReplaceOneAsync(filter: g => g.Id == associateskill.Id, replacement: associateskill);
 
-            return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
+            try
+            {
+                //var updateResult = await _context
+                //.AssociateSkills
+                //.ReplaceOneAsync(filter: g => g.Id == associateskill.Id, replacement: associateskill);
+                await _context.AssociateSkills.DeleteOneAsync(f => f.Id == associateskill.Id);
+
+
+                await _context.AssociateSkills.InsertOneAsync(associateskill);
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return false;
         }
+
+
     }
 }
