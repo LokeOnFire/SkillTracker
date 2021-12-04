@@ -44,7 +44,7 @@ namespace SkillAddAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200")
+                        builder.WithOrigins("http://ec2-3-216-126-156.compute-1.amazonaws.com")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });
