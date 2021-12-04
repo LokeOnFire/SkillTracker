@@ -38,6 +38,17 @@ namespace SkillAddAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkillAddAPI", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +62,14 @@ namespace SkillAddAPI
             }
 
             app.UseRouting();
-
+            app.UseCors();
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

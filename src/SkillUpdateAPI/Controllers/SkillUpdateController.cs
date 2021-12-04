@@ -25,7 +25,7 @@ namespace SkillUpdateAPI.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPut]
         [ProducesResponseType(typeof(AssociateSkill), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<AssociateSkill>>> UpdateSkill([FromBody] AssociateSkill associateskill)
         {

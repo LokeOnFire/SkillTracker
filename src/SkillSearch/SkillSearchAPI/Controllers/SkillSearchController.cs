@@ -52,6 +52,15 @@ namespace SkillSearchAPI.Controllers
         }
 
         [HttpGet]
+        [Route("Primary/{id}")]
+        [ProducesResponseType(typeof(IEnumerable<AssociateSkill>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateByPrimaryId(string id)
+        {
+            var result = await _repository.SearchAssociateByPrimaryId(id);
+            return Ok(result);
+        }
+
+        [HttpGet]
         [Route("all")]
         [ProducesResponseType(typeof(IEnumerable<AssociateSkill>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAllData()
@@ -59,6 +68,8 @@ namespace SkillSearchAPI.Controllers
             var result = await _repository.GetAllDetails();
             return Ok(result);
         }
+
+
 
 
     }

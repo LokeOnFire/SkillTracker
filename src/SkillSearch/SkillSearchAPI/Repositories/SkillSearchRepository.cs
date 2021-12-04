@@ -61,6 +61,16 @@ namespace SkillSearchAPI.Repositories
                     
         }
 
+        public async Task<AssociateSkill> SearchAssociateByPrimaryId(string id)
+        {
+            FilterDefinition<AssociateSkill> filter = Builders<AssociateSkill>.Filter.Eq(p => p.Id, id);
+
+            return await _context
+                    .AssociateSkills
+                    .Find(filter)
+                    .FirstOrDefaultAsync();
+        }
+
         //public Task<bool> upate(AssociateSkill associateskill)
         // {
         //     var updateResult = await _context.AssociateSkills.ReplaceOneAsync(filter: g => g.AssociateID, replacement: associateskill);
