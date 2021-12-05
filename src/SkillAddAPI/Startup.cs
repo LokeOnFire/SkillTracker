@@ -63,13 +63,13 @@ namespace SkillAddAPI
             app.UseRouting();
             app.UseCors();
 
-            //app.UseCors(builder =>
-            //{
-            //    builder
-            //    .AllowAnyOrigin()
-            //    .AllowAnyMethod()
-            //    .AllowAnyHeader();
-            //});
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
 
             app.UseAuthorization();
