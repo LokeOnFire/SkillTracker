@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}"
 	ProjectSection(SolutionItems) = preProject
-		..\appspec.yaml = ..\appspec.yaml
+		..\appspec.yml = ..\appspec.yml
 		..\test.txt = ..\test.txt
 	EndProjectSection
 EndProject
