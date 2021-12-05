@@ -56,7 +56,7 @@ namespace SkillSearchAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://ec2-3-85-185-4.compute-1.amazonaws.com")
+                        builder.AllowAnyOrigin()
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                                             
