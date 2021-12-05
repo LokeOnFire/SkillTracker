@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SkillAddAPI.Entities;
 using SkillAddAPI.Repositories;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SkillAddAPI.Controllers
 {
+    
     [ApiController]
     [Route("[controller]/api/vi/engineer/add-profile")]
     public class SkillAddController : ControllerBase
