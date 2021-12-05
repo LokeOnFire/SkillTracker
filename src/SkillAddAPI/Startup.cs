@@ -36,27 +36,18 @@ namespace SkillAddAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkillAddAPI", Version = "v1" });
             });
 
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        builder =>
-            //        {
-            //            builder.WithOrigins("http://skilldemoloadbalancer-1312593288.us-east-1.elb.amazonaws.com")
-            //                                .AllowAnyHeader()
-            //                                .WithMethods("GET, PUT, POST, DELETE, OPTIONS");
-            //        });
-            //});
-
             services.AddCors(options =>
             {
-                options.AddPolicy(name: "AllowOrigin",
+                options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://skilldemoloadbalancer-1312593288.us-east-1.elb.amazonaws.com/")
+                        builder.AllowAnyOrigin()
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });
             });
+
+           
 
             services.AddControllers();
         }
@@ -82,9 +73,9 @@ namespace SkillAddAPI
                 .AllowAnyHeader();
             });
 
-            app.UseCors("AllowOrigin");
+            //app.UseCors("AllowOrigin");
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
