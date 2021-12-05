@@ -13,7 +13,7 @@ hooks:
   #  - location: Scripts/RunResourceTests.sh
   #    timeout: 180
   ApplicationStart:
-    - location: /home/ec2-user/SkillTrackerService/src/deploymentScripts/installScript.sh
+    - location: src/deploymentScripts/installScript.sh
       timeout: 3600
   #ValidateService:
   #  - location: Scripts/MonitorService.sh
