@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}"
+	ProjectSection(SolutionItems) = preProject
+		appspec.yaml = appspec.yaml
+		test.txt = test.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkillSearch", "SkillSearch", "{A0C5D341-FF92-4572-8412-0E2CF83521EF}"
 EndProject
