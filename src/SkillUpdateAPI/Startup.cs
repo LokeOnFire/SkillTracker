@@ -44,7 +44,7 @@ namespace SkillUpdateAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("https://6rrwjkkv70.execute-api.us-east-1.amazonaws.com")
+                        builder.AllowAnyOrigin()
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });
