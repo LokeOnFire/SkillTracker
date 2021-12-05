@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}"
 	ProjectSection(SolutionItems) = preProject
 		..\appspec.yml = ..\appspec.yml
-		..\test.txt = ..\test.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkillSearch", "SkillSearch", "{A0C5D341-FF92-4572-8412-0E2CF83521EF}"
@@ -23,6 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reverseproxy", "reverseprox
 	ProjectSection(SolutionItems) = preProject
 		reverseproxy\Dockerfile = reverseproxy\Dockerfile
 		reverseproxy\nginx.conf = reverseproxy\nginx.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploymentScript", "deploymentScript", "{DE96AE4C-A279-41F6-96CA-3DAAAFAB1437}"
+	ProjectSection(SolutionItems) = preProject
+		deploymentScripts\installScript.sh = deploymentScripts\installScript.sh
 	EndProjectSection
 EndProject
 Global
@@ -57,6 +61,7 @@ Global
 		{BF03053C-0802-4D71-8FCB-5E7ADFD2F4FE} = {A0C5D341-FF92-4572-8412-0E2CF83521EF}
 		{5AF0AA2E-14C2-4807-851B-2BCAF89C0E18} = {A0C5D341-FF92-4572-8412-0E2CF83521EF}
 		{1209758D-38D2-454D-A235-5D86440BB32F} = {0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}
+		{DE96AE4C-A279-41F6-96CA-3DAAAFAB1437} = {0BE70DF8-2EF6-4E3F-8290-AD97FB78F9B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89C2DB91-9F9E-4AF1-B787-08CFC5ACAAC4}
