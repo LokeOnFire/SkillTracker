@@ -45,7 +45,7 @@ namespace SkillUpdateAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.AllowAnyOrigin()
+                        builder.WithMethods("http://localhost:4200/")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });

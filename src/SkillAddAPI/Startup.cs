@@ -58,8 +58,9 @@ namespace SkillAddAPI
             app.UseCors(x => x
                 .AllowAnyMethod()
                 .AllowAnyHeader()
+                .AllowAnyOrigin()
                 .SetIsOriginAllowed(origin => true) // allow any origin
-                .AllowCredentials());
+                .AllowCredentials()); ;
 
             //app.UseCors("AllowOrigin");
 
