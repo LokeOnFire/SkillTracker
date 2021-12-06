@@ -36,7 +36,16 @@ namespace SkillAddAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkillAddAPI", Version = "v1" });
             });
 
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+            });
 
 
 
@@ -55,16 +64,16 @@ namespace SkillAddAPI
 
             app.UseRouting();
 
-            app.UseCors(x => x
-                .AllowAnyMethod()
-                .AllowAnyHeader()
+            app.UseCors();
+            app.UseCors(builder =>
+            {
+                builder
                 .AllowAnyOrigin()
-                .SetIsOriginAllowed(origin => true) // allow any origin
-                .AllowCredentials()); ;
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
-            //app.UseCors("AllowOrigin");
-
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
