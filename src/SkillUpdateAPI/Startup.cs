@@ -45,7 +45,7 @@ namespace SkillUpdateAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200", "http://localhost:80")
+                        builder.AllowAnyOrigin()
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });
@@ -72,6 +72,14 @@ namespace SkillUpdateAPI
                 .AllowAnyHeader();
             });
             app.UseAuthorization();
+
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            //    context.Response.Headers.Add("Access-Control-Allow-Methods", "POST");
+            //    context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Accept");
+            //    await next.Invoke();
+            //});
 
             app.UseEndpoints(endpoints =>
             {
