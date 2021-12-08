@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SkillSearchAPI.Entities;
 using SkillSearchAPI.Repositories;
+using SkillSearchAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,13 @@ namespace SkillSearchAPI.Controllers
     {
         private readonly ISkillSearchRepository _repository;
         private readonly ILogger<SkillSearchController> _logger;
+        private readonly ISQSService _ISQSService;
 
-        public SkillSearchController(ISkillSearchRepository repository, ILogger<SkillSearchController> logger )
+        public SkillSearchController(ISkillSearchRepository repository, ILogger<SkillSearchController> logger, ISQSService ISQSService )
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _ISQSService = ISQSService ?? throw new ArgumentNullException(nameof(ISQSService));
         }
 
         [HttpGet]
@@ -30,6 +33,22 @@ namespace SkillSearchAPI.Controllers
         public async Task<ActionResult<IEnumerable<AssociateSkill>>> GetAssociateByName(string name)
         {
             var result = await _repository.SearchAssociateByName(name);
+
+            if(result !=null)
+            {
+
+                try
+                {
+                    var response = _ISQSService.SendMessageToSQSQueue(new MessageRequest() { Id = new Guid(), message = result });
+                }
+                catch(Exception ex)
+                {
+                    
+                }
+                
+            }
+           
+
             return Ok(result);
         }
 

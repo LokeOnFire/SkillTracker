@@ -1,3 +1,4 @@
+using Amazon.SQS;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using Serilog;
 using Serilog.Sinks.Elasticsearch;
 using SkillSearchAPI.Data;
 using SkillSearchAPI.Repositories;
+using SkillSearchAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +43,8 @@ namespace SkillSearchAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAWSService<IAmazonSQS>(Configuration.GetAWSOptions());
+            services.AddSingleton<ISQSService, SQSService>();
 
             services.AddControllers();
             services.AddScoped<ISkillSearchContext, SkillSearchContext>();
