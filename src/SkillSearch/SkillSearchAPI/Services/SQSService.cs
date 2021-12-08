@@ -1,4 +1,5 @@
-﻿using Amazon.SQS;
+﻿using Amazon.Runtime;
+using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Configuration;
 using SkillSearchAPI.Entities;
@@ -16,13 +17,20 @@ namespace SkillSearchAPI.Services
 
         public SQSService(IAmazonSQS sqsClient, IConfiguration configuration)
         {
-            _sqsClient = sqsClient;
+            var awsCreds = new BasicAWSCredentials(configuration.GetValue<string>("AWS:APIKey"), configuration.GetValue<string>("AWS:APIPASS"));
+
+            var amazonSQSConfig = new AmazonSQSConfig();
+            amazonSQSConfig.ServiceURL = "https://sqs.us-east-1.amazonaws.com";
+
+            var amazonSQSClient = new AmazonSQSClient(awsCreds, amazonSQSConfig);
+
+            _sqsClient = amazonSQSClient;
             _configuration = configuration;
         }
 
         public async Task<SendMessageResponse> SendMessageToSQSQueue(MessageRequest request)
         {
-            var sendMessageRequest = new SendMessageRequest
+            var sendMessageRequest = new SendMessageRequest 
             {
                 QueueUrl = _configuration.GetValue<string>("AWS:SQSQueryURL"), 
                 MessageBody = request.Serialize(request)
